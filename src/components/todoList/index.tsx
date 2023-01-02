@@ -124,7 +124,7 @@ export const TodoList = () => {
               }) + ' Tasks'
             }
           >
-            <List sx={{ width: '100%' }}>
+            <List>
               {sortByData[key].map((item: Todo) => (
                 <ListItem key={item.id} sx={{ display: 'flex', paddingLeft: 0, paddingRight: 0 }}>
                   <ColorBlock color={item.color} />
