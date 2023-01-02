@@ -114,13 +114,15 @@ export const TodoList = () => {
         {Object.keys(sortByData).map((key) => (
           <AccordionComponent
             key={key}
-            title={moment(new Date(key)).locale('en').calendar(null, {
-              lastDay: `[yesterday]`,
-              sameDay: `[today]`,
-              lastWeek: 'MM/DD',
-              nextWeek: 'dddd',
-              sameElse: 'MM/DD',
-            })}
+            title={
+              moment(new Date(key)).locale('en').calendar(null, {
+                lastDay: `[Yesterday]`,
+                sameDay: `[Today]`,
+                lastWeek: 'MM/DD',
+                nextWeek: 'dddd',
+                sameElse: 'MM/DD',
+              }) + ' Tasks'
+            }
           >
             <List sx={{ width: '100%' }}>
               {sortByData[key].map((item: Todo) => (
